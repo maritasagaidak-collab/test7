@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="fw-bold mb-2">ОГЛЯД ВИТРАТ</h1>
+    <p class="text-muted">Керування фінансами та моніторинг валютних ринків</p>
+</div>
+
+<div class="row g-4 justify-content-center">
+    {% for s in stats %}
+    <div class="col-md-4">
+        <div class="card p-5 text-center">
+            <div class="circle-placeholder"></div>
+
+            <h6 class="text-muted fw-bold text-uppercase mb-3">{{ s.title }}</h6>
+            <h1 class="fw-bold mb-2" style="font-size: 2.5rem;">{{ s.value }}</h1>
+            <p class="{{ s.color }} mb-0 fw-medium">{{ s.desc }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="text-center mt-5">
+    <button class="btn btn-dark px-5 py-3 fw-bold shadow-sm" style="border-radius: 10px;">
+        ДОДАТИ НОВУ ВИТРАТУ
+    </button>
+</div>
+{% endblock %}

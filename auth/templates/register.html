@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="text-align: center; padding-top: 60px;">
+    <h1 style="color: white;">Реєстрація</h1>
+    <p style="color: #888; margin-bottom: 40px;">Створіть свій профіль</p>
+
+    <form method="POST" action="{{ url_for('auth.register') }}">
+        <input type="text" name="username" placeholder="Логін" required
+               style="width: 100%; padding: 16px; margin-bottom: 15px; border-radius: 15px; border: none; background: #122416; color: white; box-sizing: border-box; outline: none;">
+
+        <input type="password" name="password" placeholder="Пароль" required
+               style="width: 100%; padding: 16px; margin-bottom: 25px; border-radius: 15px; border: none; background: #122416; color: white; box-sizing: border-box; outline: none;">
+
+        <button type="submit"
+                style="width: 100%; padding: 16px; border-radius: 15px; background: #4caf50; color: white; border: none; font-weight: bold; font-size: 16px; cursor: pointer;">
+            ЗАРЕЄСТРУВАТИСЯ
+        </button>
+    </form>
+    <p style="margin-top: 25px; font-size: 14px; color: #888;">
+        Вже є профіль? <a href="{{ url_for('auth.login') }}" style="color: #4caf50; text-decoration: none;">Увійти</a>
+    </p>
+</div>
+{% endblock %}
